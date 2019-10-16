@@ -1,5 +1,4 @@
-FROM continuumio/anaconda3:2019.10
+FROM ubuntu:18.04
 
-# Add conda executables into path
-ENV PATH "$PATH:/opt/conda/bin/"
-RUN conda install faiss-cpu -c pytorch
+RUN apt-get update && \
+    apt-get install -y libopenblas-dev liblapack3 liblapack-dev libopenblas-base libomp-dev
